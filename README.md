@@ -1,0 +1,1 @@
+This is an Azure Sphere high-level app for gathering data from scientific sensors and logging them to a remote LogStash server.

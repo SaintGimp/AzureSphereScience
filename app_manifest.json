@@ -1,0 +1,14 @@
+{
+  "SchemaVersion": 1,
+  "Name": "AzureSphereScience",
+  "ComponentId": "91a071f9-cfff-4abe-a1b0-60f110c876f2",
+  "EntryPoint": "/bin/app",
+  "CmdArgs": ["-p", "<insert pwd here>"],
+  "Capabilities": {
+    "Gpio": [ "$SEEED_MT3620_MDB_USER_LED" ],
+    "Uart": [ "$SEEED_MT3620_MDB_J1_ISU0_UART" ],
+    "I2cMaster": [ "$SEEED_MT3620_MDB_J1J2_ISU1_I2C" ],
+    "AllowedConnections": [ "logstash.saintgimp.org" ]
+  },
+  "ApplicationType": "Default"
+}
