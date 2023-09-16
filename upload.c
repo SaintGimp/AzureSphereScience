@@ -46,7 +46,7 @@ static void UploadTimerEventHandler(EventLoopTimer *timer)
         // (allow one missing message to account for timing mismatch)
         snprintf(buffer, sizeof(buffer), "{ \"cpm\": %d }", dataBlock->cpm);
         Log_Debug("%s\n", buffer);
-        SendToLogstash("http://logstash.saintgimp.org/geiger", buffer);
+        SendToLogstash("https://logstash.saintgimp.org/geiger", buffer);
     }
     else {
         // Geiger counter is probably not running
@@ -67,7 +67,7 @@ static void UploadTimerEventHandler(EventLoopTimer *timer)
         
         snprintf(buffer, sizeof(buffer), "{ \"pressure\": %d, \"sea_level_pressure\": %d }", pressure, seaLevelPressure);
         Log_Debug("%s\n", buffer);
-        SendToLogstash("http://logstash.saintgimp.org/pressure", buffer);
+        SendToLogstash("https://logstash.saintgimp.org/pressure", buffer);
 
         Log_Debug("Number of pressure samples = %d\n", dataBlock->pressureSamplesReceived);
     }

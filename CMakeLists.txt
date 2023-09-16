@@ -5,8 +5,8 @@ cmake_minimum_required (VERSION 3.20)
 
 project (AzureSphereScience C)
 
-azsphere_configure_tools(TOOLS_REVISION "22.07")
-azsphere_configure_api(TARGET_API_SET "13")
+azsphere_configure_tools(TOOLS_REVISION "23.05")
+azsphere_configure_api(TARGET_API_SET "16")
 
 # Create executable
 add_executable(${PROJECT_NAME} main.c eventloop_timer_utilities.c geiger.c "logstash.c" "upload.c" log_utils.c "bmp180.c")
