@@ -107,8 +107,6 @@ void SendToLogstash(char* url, char* postBody)
 
     char authHeader[64] = {};
     snprintf(authHeader, sizeof(authHeader), "science_user:%s", logstashPassword);
-    char logstashAuthHeader[64] = {};
-    snprintf(logstashAuthHeader, sizeof(logstashAuthHeader), "SaintGimp-Private-Key: %s", logstashPassword);
     CURL* handle = curl_easy_init();
 
     struct curl_slist* hs = NULL;
@@ -119,7 +117,6 @@ void SendToLogstash(char* url, char* postBody)
     curl_easy_setopt(handle, CURLOPT_USERAGENT, "libcurl-agent/1.0");
     curl_easy_setopt(handle, CURLOPT_USERPWD, authHeader);
     hs = curl_slist_append(hs, "Content-Type: application/json");
-    hs = curl_slist_append(hs, logstashAuthHeader);
     curl_easy_setopt(handle, CURLOPT_HTTPHEADER, hs);
 
     int still_running;
